@@ -1,0 +1,32 @@
+{% extends 'vault_home/base.html' %}
+{% block content %}
+<div class="p-5 text-center bg-image"
+style="
+  background-image: url('https://i1.wp.com/codemyui.com/wp-content/uploads/2016/11/pure-css-snow-animation.gif?fit=880%2C440&ssl=1');
+  height: 501px;
+">
+<h3 style="color:beige;">{{ error }}</h3>
+<form method='POST'>
+    {% csrf_token %}
+    <input type="text" name="site" style="width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid black;" placeholder="Site"><br><br>
+    <input type="password" name='password1' style="width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid black;" placeholder="password"><br><br>
+   <input type="password" name='password2' style="width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid black;" placeholder="confirm password"><br><br>
+    <button type="submit" class="btn btn-warning">Encrypt</button>
+</form>
+</div>
+{% endblock %}
